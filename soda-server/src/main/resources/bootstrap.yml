@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: soda-server
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        group: ${spring.profiles.active}
+        file-extension: yml
+        server-addr: 192.168.31.200:8848
+        prefix: ${spring.application.name}
+        namespace: b93725eb-f02c-4a1f-8708-42e4c151ef69
+      discovery:
+        server-addr: 192.168.31.200:8848
+        namespace: b93725eb-f02c-4a1f-8708-42e4c151ef69
