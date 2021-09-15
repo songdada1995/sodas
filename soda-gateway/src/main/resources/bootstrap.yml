@@ -1,0 +1,21 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: soda-gateway
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        namespace: 5d35c13a-afd9-4b31-a118-4ad0df53132b
+        group: DEV_GROUP
+        server-addr: 127.0.0.1:8848
+      config:
+        namespace: 5d35c13a-afd9-4b31-a118-4ad0df53132b
+        group: DEV_GROUP
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        prefix: ${spring.application.name}
+

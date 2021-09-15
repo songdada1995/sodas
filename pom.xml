@@ -19,7 +19,6 @@
     </developers>
 
     <modules>
-        <module>soda-server</module>
         <module>soda-gateway</module>
         <module>soda-auth</module>
         <module>soda-common</module>
@@ -29,6 +28,8 @@
         <spring-boot.version>2.4.2</spring-boot.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <spring-boot-admin.version>2.4.2</spring-boot-admin.version>
+        <spring-boot.mybatis>2.1.3</spring-boot.mybatis>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -66,6 +67,22 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--  SpringBoot 监控客户端 -->
+            <!--注册上SpringAdmin所需的客户端依赖-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <!-- Mybatis 依赖配置 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring-boot.mybatis}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
