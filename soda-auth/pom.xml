@@ -9,8 +9,7 @@
     </parent>
     <groupId>com.sodas</groupId>
     <artifactId>soda-auth</artifactId>
-    <version>1.0.0</version>
-    <name>soda-auth</name>
+
     <description>Demo project for Spring Boot</description>
 
     <dependencies>

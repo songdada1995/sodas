@@ -9,13 +9,31 @@ spring:
   cloud:
     nacos:
       discovery:
-        namespace: 5d35c13a-afd9-4b31-a118-4ad0df53132b
-        group: DEV_GROUP
+        namespace: fb2992ce-5da6-4501-9d07-37204b25c617
+        group: SODA_DEV_GROUP
         server-addr: 127.0.0.1:8848
       config:
-        namespace: 5d35c13a-afd9-4b31-a118-4ad0df53132b
-        group: DEV_GROUP
+        namespace: fb2992ce-5da6-4501-9d07-37204b25c617
+        group: SODA_DEV_GROUP
         server-addr: 127.0.0.1:8848
         file-extension: yml
         prefix: ${spring.application.name}
-
+        # 共享配置
+        shared-configs[0]:
+          data-id: soda-application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+          group: SODA_DEV_GROUP
+          refresh: true
+    sentinel:
+      # 取消控制台懒加载
+      eager: true
+      transport:
+        # 控制台地址
+        dashboard: 127.0.0.1:8718
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            dataId: sentinel-soda-gateway
+            groupId: SODA_DEV_GROUP
+            data-type: json
+            rule-type: flow
