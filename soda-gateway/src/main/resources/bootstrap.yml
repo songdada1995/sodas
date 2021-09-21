@@ -6,6 +6,9 @@ spring:
     name: soda-gateway
   profiles:
     active: dev
+  main:
+    # 是否允许同Bean覆盖
+    allow-bean-definition-overriding: true
   cloud:
     nacos:
       discovery:

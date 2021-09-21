@@ -10,7 +10,7 @@
     <groupId>com.sodas</groupId>
     <artifactId>soda-gateway</artifactId>
 
-    <description>Demo project for Spring Boot</description>
+    <description>网关模块</description>
 
     <dependencies>
         <!-- SpringCloud Gateway-->
@@ -64,6 +64,12 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!--验证码 -->
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
         </dependency>
 
         <!-- Swagger -->

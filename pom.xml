@@ -41,6 +41,7 @@
         <fastjson.version>1.2.76</fastjson.version>
         <common-pool.version>2.10.0</common-pool.version>
         <pagehelper.boot.version>1.3.1</pagehelper.boot.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -167,6 +168,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
             </dependency>
 
             <!-- Common Core-->
