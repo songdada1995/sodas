@@ -10,7 +10,7 @@ import org.springframework.core.annotation.Order;
  * 网关限流配置
  */
 @Configuration
-public class GatewayConfig {
+public class GatewaySentinelConfig {
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
