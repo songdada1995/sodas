@@ -3,6 +3,7 @@ package com.sodas.sodagateway.filter;
 import com.sodas.sodacommon.core.utils.ServletUtils;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.regex.Pattern;
 /**
  * 黑名单过滤器
  */
+@Component
 public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUrlFilter.Config> {
 
     @Override
