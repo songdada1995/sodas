@@ -32,11 +32,14 @@ spring:
       transport:
         # 控制台地址
         dashboard: 127.0.0.1:8718
+        client-ip: 127.0.0.1
+        port: 8719
       datasource:
         ds1:
           nacos:
+            namespace: fb2992ce-5da6-4501-9d07-37204b25c617
+            groupId: SODA_DEV_GROUP
             server-addr: 127.0.0.1:8848
             dataId: sentinel-soda-gateway
-            groupId: SODA_DEV_GROUP
             data-type: json
             rule-type: flow

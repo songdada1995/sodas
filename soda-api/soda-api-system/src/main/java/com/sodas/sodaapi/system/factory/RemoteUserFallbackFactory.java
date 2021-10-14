@@ -2,7 +2,7 @@ package com.sodas.sodaapi.system.factory;
 
 import com.sodas.sodaapi.system.RemoteUserService;
 import com.sodas.sodaapi.system.domain.SysUser;
-import com.sodas.sodaapi.system.model.LoginUser;
+import com.sodas.sodaapi.system.model.UserInfo;
 import com.sodas.sodacommon.core.domain.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.openfeign.FallbackFactory;
@@ -20,7 +20,7 @@ public class RemoteUserFallbackFactory implements FallbackFactory<RemoteUserServ
         log.error("用户服务调用失败:{}", throwable.getMessage());
         return new RemoteUserService() {
             @Override
-            public R<LoginUser> getUserInfo(String username, String source) {
+            public R<UserInfo> getUserInfo(String username, String source) {
                 return R.fail("获取用户失败:" + throwable.getMessage());
             }
 

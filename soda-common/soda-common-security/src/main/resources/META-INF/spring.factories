@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.sodas.sodacommon.security.service.UserDetailsServiceImpl,\
+  com.sodas.sodacommon.security.config.ResourceServerConfig

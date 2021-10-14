@@ -1,7 +1,7 @@
 package com.sodas.sodaauth.handler;
 
-import com.sodas.sodaapi.system.model.LoginUser;
 import com.sodas.sodacommon.core.utils.ServletUtils;
+import com.sodas.sodacommon.security.domain.LoginUser;
 import com.sodas.sodacommon.security.handler.AbstractAuthenticationSuccessEventHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;

@@ -64,14 +64,4 @@ public class SecurityConstants {
      * 默认的查询语句
      */
     public static final String DEFAULT_FIND_STATEMENT = BASE_FIND_STATEMENT + " order by client_id";
-
-    /**
-     * 请求来源
-     */
-    public static final String FROM_SOURCE = "from-source";
-
-    /**
-     * 内部请求
-     */
-    public static final String INNER = "inner";
 }

@@ -24,7 +24,7 @@ public interface RemoteLogService {
      * @return 结果
      */
     @PostMapping("/operlog")
-    public R<Boolean> saveLog(@RequestBody SysOperLog sysOperLog, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+    public R<Boolean> saveLog(@RequestBody SysOperLog sysOperLog, @RequestHeader(SecurityConstants.FROM) String from);
 
     /**
      * 保存访问记录
@@ -34,5 +34,5 @@ public interface RemoteLogService {
      * @return 结果
      */
     @PostMapping("/logininfor")
-    public R<Boolean> saveLogininfor(@RequestBody SysLogininfor sysLogininfor, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+    public R<Boolean> saveLogininfor(@RequestBody SysLogininfor sysLogininfor, @RequestHeader(SecurityConstants.FROM) String from);
 }
