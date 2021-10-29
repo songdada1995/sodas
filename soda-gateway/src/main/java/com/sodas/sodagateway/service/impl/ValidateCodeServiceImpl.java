@@ -8,7 +8,6 @@ import com.sodas.sodacommon.core.utils.StringUtils;
 import com.sodas.sodacommon.core.utils.sign.Base64;
 import com.sodas.sodacommon.core.web.domain.AjaxResult;
 import com.sodas.sodacommon.redis.service.RedisService;
-import com.sodas.sodagateway.config.properties.CaptchaProperties;
 import com.sodas.sodagateway.service.ValidateCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class ValidateCodeServiceImpl implements ValidateCodeService {
-
     @Resource(name = "captchaProducer")
     private Producer captchaProducer;
 
@@ -32,18 +30,14 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
     @Autowired
     private RedisService redisService;
 
-    @Autowired
-    private CaptchaProperties captchaProperties;
+    // 验证码类型
+    private String captchaType = "math";
 
+    /**
+     * 生成验证码
+     */
     @Override
     public AjaxResult createCapcha() throws IOException, CaptchaException {
-        AjaxResult ajax = AjaxResult.success();
-        boolean captchaOnOff = captchaProperties.getEnabled();
-        ajax.put("captchaOnOff", captchaOnOff);
-        if (!captchaOnOff) {
-            return ajax;
-        }
-
         // 保存验证码信息
         String uuid = IdUtils.simpleUUID();
         String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
@@ -51,7 +45,6 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
         String capStr = null, code = null;
         BufferedImage image = null;
 
-        String captchaType = captchaProperties.getType();
         // 生成验证码
         if ("math".equals(captchaType)) {
             String capText = captchaProducerMath.createText();
@@ -72,6 +65,7 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
             return AjaxResult.error(e.getMessage());
         }
 
+        AjaxResult ajax = AjaxResult.success();
         ajax.put("uuid", uuid);
         ajax.put("img", Base64.encode(os.toByteArray()));
         return ajax;
@@ -96,5 +90,4 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
             throw new CaptchaException("验证码错误");
         }
     }
-
 }
