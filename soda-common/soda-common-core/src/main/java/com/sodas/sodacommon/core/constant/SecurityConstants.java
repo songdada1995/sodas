@@ -5,6 +5,11 @@ package com.sodas.sodacommon.core.constant;
  */
 public class SecurityConstants {
     /**
+     * 令牌类型
+     */
+    public static final String BEARER_TOKEN_TYPE = "Bearer";
+
+    /**
      * 授权token url
      */
     public static final String AUTH_TOKEN = "/oauth/token";
@@ -22,26 +27,6 @@ public class SecurityConstants {
      * 用户名字段
      */
     public static final String DETAILS_USERNAME = "username";
-
-    /**
-     * 令牌类型
-     */
-    public static final String BEARER_TOKEN_TYPE = "Bearer";
-
-    /**
-     * token 令牌前缀(Basic认证)
-     */
-    public static final String BASIC_ = "Basic ";
-
-    /**
-     * 内部
-     */
-    public static final String FROM_IN = "Y";
-
-    /**
-     * 标志
-     */
-    public static final String FROM = "from";
 
     /**
      * sys_oauth_client_details 表的字段，不包括client_id、client_secret

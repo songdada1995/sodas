@@ -15,8 +15,11 @@
 
     <modules>
         <module>soda-common-core</module>
+        <module>soda-common-datascope</module>
+        <module>soda-common-log</module>
         <module>soda-common-redis</module>
         <module>soda-common-security</module>
+        <module>soda-common-swagger</module>
     </modules>
 
 </project>

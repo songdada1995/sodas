@@ -3,7 +3,6 @@ package com.sodas.sodacommon.security.service;
 import com.sodas.sodaapi.system.RemoteUserService;
 import com.sodas.sodaapi.system.domain.SysUser;
 import com.sodas.sodaapi.system.model.UserInfo;
-import com.sodas.sodacommon.core.constant.SecurityConstants;
 import com.sodas.sodacommon.core.domain.R;
 import com.sodas.sodacommon.core.enums.UserStatus;
 import com.sodas.sodacommon.core.exception.BaseException;
@@ -31,7 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        R<UserInfo> userResult = remoteUserService.getUserInfo(username, SecurityConstants.FROM_IN);
+        R<UserInfo> userResult = remoteUserService.getUserInfo(username);
         checkUser(userResult, username);
         return getUserDetails(userResult);
     }
