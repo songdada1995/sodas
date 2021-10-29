@@ -40,20 +40,10 @@ public class SysRole extends BaseEntity {
     private String roleSort;
 
     /**
-     * 数据范围（1：所有数据权限；2：自定义数据权限；3：本部门数据权限；4：本部门及以下数据权限；5：仅本人数据权限）
+     * 数据范围（1：所有数据权限；2：自定义数据权限；3：本部门数据权限；4：本部门及以下数据权限）
      */
-    @Excel(name = "数据范围", readConverterExp = "1=所有数据权限,2=自定义数据权限,3=本部门数据权限,4=本部门及以下数据权限,5=仅本人数据权限")
+    @Excel(name = "数据范围", readConverterExp = "1=所有数据权限,2=自定义数据权限,3=本部门数据权限,4=本部门及以下数据权限")
     private String dataScope;
-
-    /**
-     * 菜单树选择项是否关联显示（ 0：父子不互相关联显示 1：父子互相关联显示）
-     */
-    private boolean menuCheckStrictly;
-
-    /**
-     * 部门树选择项是否关联显示（0：父子不互相关联显示 1：父子互相关联显示 ）
-     */
-    private boolean deptCheckStrictly;
 
     /**
      * 角色状态（0正常 1停用）
@@ -89,16 +79,20 @@ public class SysRole extends BaseEntity {
         this.roleId = roleId;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public Long getRoleId() {
         return roleId;
     }
 
     public void setRoleId(Long roleId) {
         this.roleId = roleId;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin(this.roleId);
+    }
+
+    public static boolean isAdmin(Long roleId) {
+        return roleId != null && 1L == roleId;
     }
 
     @NotBlank(message = "角色名称不能为空")
@@ -136,22 +130,6 @@ public class SysRole extends BaseEntity {
 
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
-    }
-
-    public boolean isMenuCheckStrictly() {
-        return menuCheckStrictly;
-    }
-
-    public void setMenuCheckStrictly(boolean menuCheckStrictly) {
-        this.menuCheckStrictly = menuCheckStrictly;
-    }
-
-    public boolean isDeptCheckStrictly() {
-        return deptCheckStrictly;
-    }
-
-    public void setDeptCheckStrictly(boolean deptCheckStrictly) {
-        this.deptCheckStrictly = deptCheckStrictly;
     }
 
     public String getStatus() {
@@ -194,7 +172,6 @@ public class SysRole extends BaseEntity {
         this.deptIds = deptIds;
     }
 
-    @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
                 .append("roleId", getRoleId())
@@ -202,8 +179,6 @@ public class SysRole extends BaseEntity {
                 .append("roleKey", getRoleKey())
                 .append("roleSort", getRoleSort())
                 .append("dataScope", getDataScope())
-                .append("menuCheckStrictly", isMenuCheckStrictly())
-                .append("deptCheckStrictly", isDeptCheckStrictly())
                 .append("status", getStatus())
                 .append("delFlag", getDelFlag())
                 .append("createBy", getCreateBy())

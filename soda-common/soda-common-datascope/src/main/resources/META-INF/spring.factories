@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.sodas.sodacommon.datascope.aspect.DataScopeAspect,\
+  com.sodas.sodacommon.datascope.service.LoginUserService
+
+  

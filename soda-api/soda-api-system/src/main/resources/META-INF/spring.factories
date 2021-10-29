@@ -1,4 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.sodas.sodaapi.system.factory.RemoteUserFallbackFactory,\
-  com.sodas.sodaapi.system.factory.RemoteLogFallbackFactory, \
-  com.sodas.sodaapi.system.factory.RemoteFileFallbackFactory
+  com.sodas.sodaapi.system.factory.RemoteLogFallbackFactory

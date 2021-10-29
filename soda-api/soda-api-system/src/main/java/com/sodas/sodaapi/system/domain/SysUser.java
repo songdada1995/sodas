@@ -120,11 +120,6 @@ public class SysUser extends BaseEntity {
      */
     private Long[] postIds;
 
-    /**
-     * 角色ID
-     */
-    private Long roleId;
-
     public SysUser() {
 
     }
@@ -280,12 +275,14 @@ public class SysUser extends BaseEntity {
         this.postIds = postIds;
     }
 
-    public Long getRoleId() {
-        return roleId;
+    public boolean isAdmin()
+    {
+        return isAdmin(this.userId);
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public static boolean isAdmin(Long userId)
+    {
+        return userId != null && 1L == userId;
     }
 
     @Override
