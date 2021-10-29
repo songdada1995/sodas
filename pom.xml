@@ -23,6 +23,7 @@
         <module>soda-auth</module>
         <module>soda-common</module>
         <module>soda-api</module>
+        <module>soda-modules</module>
     </modules>
 
     <properties>
@@ -187,6 +188,20 @@
                 <version>${soda.version}</version>
             </dependency>
 
+            <!-- soda-common-datascope -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-common-datascope</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
+            <!-- soda-common-log -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-common-log</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
             <!-- Common Redis -->
             <dependency>
                 <groupId>com.sodas</groupId>
@@ -201,10 +216,24 @@
                 <version>${soda.version}</version>
             </dependency>
 
+            <!-- soda-common-swagger -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-common-swagger</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
             <!-- soda-api-system -->
             <dependency>
                 <groupId>com.sodas</groupId>
                 <artifactId>soda-api-system</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
+            <!-- soda-modules-system -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-modules-system</artifactId>
                 <version>${soda.version}</version>
             </dependency>
 
