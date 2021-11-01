@@ -2,19 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>sodas</artifactId>
         <groupId>com.sodas</groupId>
+        <artifactId>sodas</artifactId>
         <version>1.0.0</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.sodas</groupId>
     <artifactId>soda-common</artifactId>
     <packaging>pom</packaging>
 
     <modules>
         <module>soda-common-core</module>
+        <module>soda-common-datascope</module>
+        <module>soda-common-log</module>
         <module>soda-common-redis</module>
+        <module>soda-common-security</module>
+        <module>soda-common-swagger</module>
     </modules>
 
 </project>

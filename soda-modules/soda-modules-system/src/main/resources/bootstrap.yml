@@ -1,0 +1,26 @@
+server:
+  port: 9201
+
+spring:
+  application:
+    name: @artifactId@
+  profiles:
+    active: dev
+
+  cloud:
+    nacos:
+      discovery:
+        namespace: fb2992ce-5da6-4501-9d07-37204b25c617
+        group: SODA_DEV_GROUP
+        server-addr: 127.0.0.1:8848
+      config:
+        namespace: fb2992ce-5da6-4501-9d07-37204b25c617
+        group: SODA_DEV_GROUP
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        prefix: ${spring.application.name}
+        # 共享配置
+        shared-configs[0]:
+          data-id: soda-application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+          group: SODA_DEV_GROUP
+          refresh: true

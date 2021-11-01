@@ -5,14 +5,18 @@ package com.sodas.sodacommon.core.constant;
  */
 public class SecurityConstants {
     /**
-     * 令牌自定义标识
+     * 令牌类型
      */
-    public static final String TOKEN_AUTHENTICATION = "Authorization";
+    public static final String BEARER_TOKEN_TYPE = "Bearer";
 
     /**
-     * 令牌前缀
+     * 授权token url
      */
-    public static final String TOKEN_PREFIX = "Bearer ";
+    public static final String AUTH_TOKEN = "/oauth/token";
+    /**
+     * 注销token url
+     */
+    public static final String TOKEN_LOGOUT = "/token/logout";
 
     /**
      * 用户ID字段
@@ -25,17 +29,24 @@ public class SecurityConstants {
     public static final String DETAILS_USERNAME = "username";
 
     /**
-     * 授权信息字段
+     * sys_oauth_client_details 表的字段，不包括client_id、client_secret
      */
-    public static final String AUTHORIZATION_HEADER = "authorization";
+    public static final String CLIENT_FIELDS = "client_id, client_secret, resource_ids, scope, "
+            + "authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, "
+            + "refresh_token_validity, additional_information, autoapprove";
 
     /**
-     * 请求来源
+     * JdbcClientDetailsService 查询语句
      */
-    public static final String FROM_SOURCE = "from-source";
+    public static final String BASE_FIND_STATEMENT = "select " + CLIENT_FIELDS + " from sys_oauth_client_details";
 
     /**
-     * 内部请求
+     * 按条件client_id 查询
      */
-    public static final String INNER = "inner";
+    public static final String DEFAULT_SELECT_STATEMENT = BASE_FIND_STATEMENT + " where client_id = ?";
+
+    /**
+     * 默认的查询语句
+     */
+    public static final String DEFAULT_FIND_STATEMENT = BASE_FIND_STATEMENT + " order by client_id";
 }

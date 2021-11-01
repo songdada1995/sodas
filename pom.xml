@@ -22,6 +22,8 @@
         <module>soda-gateway</module>
         <module>soda-auth</module>
         <module>soda-common</module>
+        <module>soda-api</module>
+        <module>soda-modules</module>
     </modules>
 
     <properties>
@@ -29,6 +31,7 @@
         <spring-boot.version>2.5.3</spring-boot.version>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <spring-cloud-starter-oauth2.version>2.2.5.RELEASE</spring-cloud-starter-oauth2.version>
         <spring-boot-admin.version>2.4.3</spring-boot-admin.version>
         <spring-boot.mybatis>2.2.0</spring-boot.mybatis>
         <lombok.version>1.18.20</lombok.version>
@@ -42,6 +45,7 @@
         <common-pool.version>2.10.0</common-pool.version>
         <pagehelper.boot.version>1.3.1</pagehelper.boot.version>
         <kaptcha.version>2.3.2</kaptcha.version>
+        <hutool.version>5.6.4</hutool.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -78,6 +82,13 @@
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!--  spring-cloud-starter-oauth2 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${spring-cloud-starter-oauth2.version}</version>
             </dependency>
 
             <!--  SpringBoot 监控客户端 -->
@@ -163,13 +174,6 @@
                 <version>${pagehelper.boot.version}</version>
             </dependency>
 
-            <!-- JSON 解析器和生成器 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-
             <!-- 验证码 -->
             <dependency>
                 <groupId>com.github.penggle</groupId>
@@ -177,19 +181,62 @@
                 <version>${kaptcha.version}</version>
             </dependency>
 
-            <!-- Common Core-->
+            <!-- Common Core -->
             <dependency>
                 <groupId>com.sodas</groupId>
                 <artifactId>soda-common-core</artifactId>
                 <version>${soda.version}</version>
             </dependency>
 
-            <!-- Common Redis-->
+            <!-- soda-common-datascope -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-common-datascope</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
+            <!-- soda-common-log -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-common-log</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
+            <!-- Common Redis -->
             <dependency>
                 <groupId>com.sodas</groupId>
                 <artifactId>soda-common-redis</artifactId>
                 <version>${soda.version}</version>
             </dependency>
+
+            <!-- soda-common-security -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-common-security</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
+            <!-- soda-common-swagger -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-common-swagger</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
+            <!-- soda-api-system -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-api-system</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
+            <!-- soda-modules-system -->
+            <dependency>
+                <groupId>com.sodas</groupId>
+                <artifactId>soda-modules-system</artifactId>
+                <version>${soda.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

@@ -15,15 +15,17 @@ import java.util.List;
 @ConfigurationProperties(prefix = "security.ignore")
 public class IgnoreWhiteProperties {
     /**
-     * 放行白名单配置，网关不校验此处的白名单
+     * 放行终端配置，网关不校验此处的终端
      */
-    private List<String> whites = new ArrayList<>();
+    private List<String> clients = new ArrayList<>();
 
-    public List<String> getWhites() {
-        return whites;
+    public List<String> getClients()
+    {
+        return clients;
     }
 
-    public void setWhites(List<String> whites) {
-        this.whites = whites;
+    public void setClients(List<String> clients)
+    {
+        this.clients = clients;
     }
 }
